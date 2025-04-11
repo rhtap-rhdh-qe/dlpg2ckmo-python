@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dlpg2ckmo-python-gitops
+  description: This is GitOps manifest for dlpg2ckmo-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=dlpg2ckmo-python
+    backstage.io/kubernetes-id: dlpg2ckmo-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: dlpg2ckmo-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dlpg2ckmo-python
